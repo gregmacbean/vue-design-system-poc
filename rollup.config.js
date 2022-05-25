@@ -1,21 +1,24 @@
-import vue from "rollup-plugin-vue";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
-import typescript from "@rollup/plugin-typescript";
-import css from "rollup-plugin-css-only";
+import resolve from "@rollup/plugin-node-resolve";
+import typescript from "rollup-plugin-typescript2";
+import vue from "rollup-plugin-vue";
+import postcss from "rollup-plugin-postcss";
 
-export default [
-  {
-    input: "src/index.js",
-    output: [
-      {
-        format: "esm",
-        file: "dist/library.mjs",
-      },
-      {
-        format: "cjs",
-        file: "dist/library.js",
-      },
-    ],
-    plugins: [typescript(), css(), vue({ css: false }), peerDepsExternal()],
-  },
-];
+import packageJson from "./package.json";
+
+export default {
+  input: "src/index.js",
+  output: [
+    {
+      format: "cjs",
+      file: packageJson.main,
+      sourcemap: true,
+    },
+    {
+      format: "esm",
+      file: packageJson.module,
+      sourcemap: true,
+    },
+  ],
+  plugins: [peerDepsExternal(), resolve(), typescript(), vue(), postcss()],
+};
