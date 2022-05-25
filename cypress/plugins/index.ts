@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-env node */
 // ***********************************************************
 // This example plugins/index.ts can be used to load plugins
@@ -15,5 +16,10 @@
 export default ((on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
+
+  const { startDevServer } = require("@cypress/webpack-dev-server");
+
+  on("dev-server:start", (options) => startDevServer({ options }));
+
   return config;
 }) as Cypress.PluginConfig;
