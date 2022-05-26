@@ -10,4 +10,5 @@ pipelines:
           script:
             - yarn install
             - yarn lint
+            - export NPM_TOKEN=$NPM_TOKEN
             - yarn build
