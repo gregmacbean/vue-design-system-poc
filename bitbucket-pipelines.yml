@@ -12,3 +12,6 @@ pipelines:
             - yarn lint
             - export NPM_TOKEN=$NPM_TOKEN
             - yarn build
+            - pipe: atlassian/npm-publish:0.2.5
+              variables:
+                NPM_TOKEN: $NPM_TOKEN
