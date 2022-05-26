@@ -9,8 +9,8 @@ pipelines:
           - yarn install
           - yarn lint
           - yarn build
-          artifacts:
-            - dist/**
+        artifacts:
+          - dist/**
     - step:
         name: Publish
         deployment: production
