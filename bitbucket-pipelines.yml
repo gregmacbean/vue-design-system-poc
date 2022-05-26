@@ -6,9 +6,9 @@ pipelines:
     - step:
         name: Build and Test
         script:
-          - npm install
-          - npm lint
-          - npm run build
+          - yarn install
+          - yarn lint
+          - yarn build
           - npm version minor -m "Upgrade to %s [skip ci]"
           - git push && git push --tags
           - pipe: atlassian/npm-publish:0.2.0
