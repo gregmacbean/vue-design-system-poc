@@ -8,6 +8,6 @@ pipelines:
           caches:
             - node
           script:
-            - npm install
-            - npm run lint
-            - npm build
+            - yarn install
+            - yarn lint
+            - yarn build
