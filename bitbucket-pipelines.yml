@@ -12,6 +12,8 @@ pipelines:
             - yarn lint
             - export NPM_TOKEN=$NPM_TOKEN
             - yarn build
+            - declare -x VERSION=$(jq -r '.version' package.json)
+            - npm version $VERSION 
             - pipe: atlassian/npm-publish:0.2.5
               variables:
                 NPM_TOKEN: $NPM_TOKEN
