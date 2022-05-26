@@ -1,6 +1,15 @@
-__Please note:__
+### Please note:
 
-This repository is not production ready code  
-This repository is not maintained  
+- This is not production ready code  
+- This is not maintained  
+- This is a proof of concept only
 
-It is a POC (proof of concept) - an experiment - to test out the creation of a design system, including testing (Cypress, linting, vitest), StoryBook for design & development of components and CICD (GitHub actions, GitHub packages).
+This experiment is to get a working bare-bones solution to package & publish Vue components for use as a design system.
+
+#### TODO:
+
+[x] Ensure Storybook is working  
+[x] Ensure Cypress is working  
+[x] Ensure publishing to NPM is working  
+[ ] Ensure CICD is working  
+[ ] Ensure type definitions published with package

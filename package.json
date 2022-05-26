@@ -1,6 +1,6 @@
 {
   "name": "vue-design-system-poc",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "dist/library.js",
   "module": "dist/library.mjs",
   "files": [
